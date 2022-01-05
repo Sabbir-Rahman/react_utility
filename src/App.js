@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
+import DisplayComponent from './Components/DisplayComponent';
+import BtnComponent from './Components/BtnComponent';
 
 function App() {
+  const [time,setTime] = useState({ms:0, m:0, s:0, h:0})
+
+  const start = () => console.log("Hello")
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main-section">
+      <div className="clock-holder">
+        <div className='stopwatch'>
+          <DisplayComponent time={time}/>
+          <BtnComponent/>
+        </div>
+      </div>
     </div>
   );
 }
